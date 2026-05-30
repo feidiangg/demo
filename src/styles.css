@@ -105,6 +105,7 @@ a {
   border-radius: 8px;
   background: rgba(4, 24, 20, 0.82);
   color: #56ffc1;
+  font-size: 0.78rem;
   box-shadow: 0 0 28px rgba(42, 225, 157, 0.22);
 }
 
@@ -161,9 +162,9 @@ nav a:hover {
   min-height: calc(92vh - 72px);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 760px) minmax(270px, 360px);
+  grid-template-columns: minmax(0, 740px) minmax(300px, 380px);
   align-items: center;
-  gap: 42px;
+  gap: 54px;
   padding: 44px 0 82px;
 }
 
@@ -251,11 +252,77 @@ h1 {
 }
 
 .status-panel {
+  overflow: hidden;
   border: 1px solid rgba(224, 255, 244, 0.15);
   border-radius: 8px;
   background: rgba(3, 18, 15, 0.66);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(20px);
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  border-bottom: 1px solid rgba(224, 255, 244, 0.1);
+  background:
+    linear-gradient(135deg, rgba(86, 255, 193, 0.14), transparent 46%),
+    rgba(4, 24, 20, 0.44);
+}
+
+.avatar-frame {
+  position: relative;
+  width: 118px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid rgba(242, 182, 80, 0.5);
+  border-radius: 8px;
+  background: rgba(6, 16, 14, 0.86);
+  box-shadow:
+    0 0 0 4px rgba(242, 182, 80, 0.06),
+    0 20px 48px rgba(0, 0, 0, 0.26);
+}
+
+.avatar-frame::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent, rgba(86, 255, 193, 0.12), transparent),
+    linear-gradient(180deg, transparent 72%, rgba(6, 16, 14, 0.28));
+}
+
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.profile-card span {
+  display: block;
+  color: #56ffc1;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.profile-card strong {
+  display: block;
+  margin-top: 8px;
+  color: #f7fffb;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.profile-card p {
+  margin: 8px 0 0;
+  color: rgba(238, 248, 243, 0.62);
+  font-size: 0.78rem;
+  line-height: 1.55;
 }
 
 .panel-top,
@@ -591,7 +658,7 @@ h1 {
   .topbar {
     height: auto;
     flex-wrap: wrap;
-    padding: 18px 0;
+    padding: 16px 0;
   }
 
   nav {
@@ -613,11 +680,12 @@ h1 {
 
   .hero-content {
     min-height: auto;
-    padding-top: 62px;
+    gap: 30px;
+    padding-top: 54px;
   }
 
   .status-panel {
-    max-width: 480px;
+    width: min(100%, 560px);
   }
 
   .section-heading {
@@ -649,12 +717,113 @@ h1 {
     width: min(100% - 28px, 1180px);
   }
 
+  .topbar {
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 0.82rem;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    font-size: 0.68rem;
+  }
+
+  nav {
+    gap: 2px;
+    padding: 4px;
+  }
+
+  nav a {
+    padding: 7px 8px;
+    font-size: 0.68rem;
+  }
+
+  .language-switch {
+    gap: 2px;
+    padding: 3px;
+  }
+
+  .language-switch button {
+    min-width: 31px;
+    height: 26px;
+    padding: 0 7px;
+    font-size: 0.68rem;
+  }
+
+  .hero-content {
+    gap: 24px;
+    padding: 32px 0 58px;
+  }
+
+  .status-line {
+    gap: 8px;
+    font-size: 0.68rem;
+    line-height: 1.5;
+  }
+
   h1 {
-    font-size: clamp(3.4rem, 22vw, 6.4rem);
+    font-size: clamp(3rem, 18vw, 5.3rem);
   }
 
   .title-line {
-    font-size: 1.32rem;
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  .summary {
+    margin-top: 18px;
+    font-size: 0.92rem;
+    line-height: 1.78;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .primary-action,
+  .secondary-action {
+    min-height: 42px;
+    padding: 0 13px;
+    font-size: 0.82rem;
+  }
+
+  .profile-card {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 13px;
+    padding: 14px;
+  }
+
+  .avatar-frame {
+    width: 88px;
+  }
+
+  .profile-card strong {
+    margin-top: 6px;
+    font-size: 0.92rem;
+  }
+
+  .profile-card p {
+    margin-top: 6px;
+    font-size: 0.72rem;
+    line-height: 1.48;
+  }
+
+  .panel-top,
+  .stat-row {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .systems-section,
+  .impact-section {
+    padding: 56px 0;
   }
 
   .module-list,
@@ -663,15 +832,81 @@ h1 {
   }
 
   .module-card {
-    min-height: 210px;
+    min-height: 178px;
+    padding: 18px;
+  }
+
+  .module-card span {
+    margin-bottom: 22px;
+  }
+
+  .module-card strong {
+    font-size: 1.05rem;
+  }
+
+  .module-card em {
+    font-size: 0.82rem;
   }
 
   .terminal pre {
-    min-height: 300px;
+    min-height: 268px;
     padding: 18px;
+  }
+
+  .terminal code {
+    font-size: 0.76rem;
+  }
+
+  .metric-card {
+    min-height: 198px;
+    padding: 20px;
+  }
+
+  .metric-card span {
+    font-size: 2.15rem;
+  }
+
+  .metric-card strong {
+    margin-top: 28px;
   }
 
   .closing-band {
     padding: 22px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-content,
+  .systems-section,
+  .impact-section,
+  .topbar {
+    width: min(100% - 22px, 1180px);
+  }
+
+  .brand > span:last-child {
+    max-width: 128px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  nav a {
+    padding: 7px 5px;
+    font-size: 0.64rem;
+  }
+
+  .language-switch button {
+    min-width: 28px;
+    height: 24px;
+    padding: 0 6px;
+    font-size: 0.63rem;
+  }
+
+  .profile-card {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+
+  .avatar-frame {
+    width: 76px;
   }
 }

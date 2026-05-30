@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import avatarImage from "./assets/avatar.jpg";
 
 const content = {
   zh: {
@@ -11,6 +12,10 @@ const content = {
     primaryAction: "查看平台地图",
     secondaryAction: "运行自我介绍",
     languageLabel: "语言",
+    avatarAlt: "沸点的个人头像插画",
+    avatarKicker: "visual id",
+    avatarTitle: "Creative operator",
+    avatarCaption: "把平台、社区和技术表达画到同一张图上。",
     signal: "ONLINE",
     availability: "平台 / 社区 / AI 生态",
     heroStats: [
@@ -82,6 +87,10 @@ const content = {
     primaryAction: "Open Platform Map",
     secondaryAction: "Run Intro",
     languageLabel: "Lang",
+    avatarAlt: "Boiling Point profile illustration",
+    avatarKicker: "visual id",
+    avatarTitle: "Creative operator",
+    avatarCaption: "Mapping platforms, communities, and technical narratives into one picture.",
     signal: "ONLINE",
     availability: "Platform / Community / AI Ecosystem",
     heroStats: [
@@ -176,7 +185,7 @@ function App() {
         <div className="hero-bg" aria-hidden="true" />
         <header className="topbar">
           <a className="brand" href="#profile" aria-label={t.name}>
-            <span className="brand-mark">fd</span>
+            <span className="brand-mark">bp</span>
             <span>{t.name}</span>
           </a>
           <nav aria-label="Primary navigation">
@@ -225,6 +234,16 @@ function App() {
           </div>
 
           <aside className="status-panel" aria-label={t.availability}>
+            <div className="profile-card">
+              <div className="avatar-frame">
+                <img src={avatarImage} alt={t.avatarAlt} />
+              </div>
+              <div>
+                <span>{t.avatarKicker}</span>
+                <strong>{t.avatarTitle}</strong>
+                <p>{t.avatarCaption}</p>
+              </div>
+            </div>
             <div className="panel-top">
               <span>{t.availability}</span>
               <span className="panel-light" />

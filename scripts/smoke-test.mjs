@@ -6,6 +6,8 @@ const requiredFiles = [
   "src/main.jsx",
   "src/styles.css",
   "vite.config.js",
+  "public/favicon.jpg",
+  "src/assets/avatar.jpg",
   "src/assets/hero-platform.png"
 ];
 
