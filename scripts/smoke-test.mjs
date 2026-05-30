@@ -17,7 +17,7 @@ const app = await readFile("src/App.jsx", "utf8");
 const styles = await readFile("src/styles.css", "utf8");
 const viteConfig = await readFile("vite.config.js", "utf8");
 
-if (!app.includes("费典") || !app.includes("Feidian")) {
+if (!app.includes("沸点") || !app.includes("Boiling Point")) {
   throw new Error("App should include bilingual identity content");
 }
 
@@ -25,8 +25,8 @@ if (!app.includes("setLanguage") || !app.includes("setActiveKey")) {
   throw new Error("App should include language and interaction state");
 }
 
-if (!viteConfig.includes('base: "/demo/"')) {
-  throw new Error("Vite should be configured for the GitHub Pages /demo/ base path");
+if (!viteConfig.includes('base: "/hey/"')) {
+  throw new Error("Vite should be configured for the GitHub Pages /hey/ base path");
 }
 
 for (const forbidden of ["purple", "violet", "magenta"]) {

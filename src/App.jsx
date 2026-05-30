@@ -4,7 +4,7 @@ const content = {
   zh: {
     badge: "DEVELOPER ECOSYSTEM / AI PLATFORM",
     nav: ["Profile", "Systems", "Impact"],
-    name: "费典",
+    name: "沸点",
     title: "把开发者、AI 技术生态和平台能力连接起来的人。",
     summary:
       "我长期在开发者社区、AI 技术生态和平台相关工作中穿梭，关注如何把复杂能力变成开发者愿意使用、生态伙伴愿意共建、业务团队能够持续运营的系统。",
@@ -58,7 +58,7 @@ const content = {
     consoleTitle: "interactive terminal",
     consoleHint: "session synced with selected module",
     bootLines: [
-      "booting feidian.profile",
+      "booting boiling-point.profile",
       "loading developer-community context",
       "loading Baidu AI ecosystem experience",
       "ready"
@@ -75,7 +75,7 @@ const content = {
   en: {
     badge: "DEVELOPER ECOSYSTEM / AI PLATFORM",
     nav: ["Profile", "Systems", "Impact"],
-    name: "Feidian",
+    name: "Boiling Point",
     title: "I connect developers, AI ecosystems, and platform capabilities.",
     summary:
       "My work sits around developer communities, AI technology ecosystems, and platform operations. I care about turning complex capabilities into systems that developers can adopt, partners can build with, and teams can operate over time.",
@@ -129,7 +129,7 @@ const content = {
     consoleTitle: "interactive terminal",
     consoleHint: "session synced with selected module",
     bootLines: [
-      "booting feidian.profile",
+      "booting boiling-point.profile",
       "loading developer-community context",
       "loading Baidu AI ecosystem experience",
       "ready"

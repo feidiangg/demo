@@ -1,4 +1,4 @@
-# 费典的 GitHub Pages 自我介绍站点
+# 沸点的 GitHub Pages 自我介绍站点
 
 这是一个 Vite + React 的双语互动式个人介绍页面，聚焦开发者社区、AI 技术生态和平台相关工作。
 
@@ -24,7 +24,7 @@ npm run build
 npm run preview
 ```
 
-线上页面：<https://feidiangg.github.io/demo/>
+线上页面：<https://feidiangg.github.io/hey/>
 
 ## 部署
 
