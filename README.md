@@ -1,21 +1,31 @@
-# 最小 GitHub CI/CD 部署
+# 费典的 GitHub Pages 自我介绍站点
 
-这个仓库用于跑通一个最小但完整的 GitHub Actions 部署链路：
+这是一个 Vite + React 的双语互动式个人介绍页面，聚焦开发者社区、AI 技术生态和平台相关工作。
 
-1. `npm test` 做 smoke test。
-2. `npm run build` 把 `src/` 构建到 `dist/`。
-3. GitHub Actions 把 `dist/` 部署到 GitHub Pages。
+CI/CD 链路：
+
+1. `npm ci` 安装依赖。
+2. `npm test` 做 smoke test。
+3. `npm run build` 构建 React 站点到 `dist/`。
+4. GitHub Actions 把 `dist/` 部署到 GitHub Pages。
 
 ## 本地运行
 
 ```bash
+npm ci
 npm test
-npm run build
-npm start
+npm run dev
 ```
 
-打开 <http://localhost:4173> 可以查看本地构建后的页面。
+本地构建预览：
+
+```bash
+npm run build
+npm run preview
+```
+
+线上页面：<https://feidiangg.github.io/demo/>
 
 ## 部署
 
-推送到 `main` 后，`.github/workflows/deploy.yml` 会自动部署到 GitHub Pages。
+推送到 `main` 后，`.github/workflows/deploy.yml` 会自动运行测试、构建并部署。

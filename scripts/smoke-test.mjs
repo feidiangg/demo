@@ -1,19 +1,38 @@
 import { access, readFile } from "node:fs/promises";
 
-const requiredFiles = ["src/index.html", "src/styles.css", "scripts/build.mjs"];
+const requiredFiles = [
+  "index.html",
+  "src/App.jsx",
+  "src/main.jsx",
+  "src/styles.css",
+  "vite.config.js",
+  "src/assets/hero-platform.png"
+];
 
 for (const file of requiredFiles) {
   await access(file);
 }
 
-const html = await readFile("src/index.html", "utf8");
+const app = await readFile("src/App.jsx", "utf8");
+const styles = await readFile("src/styles.css", "utf8");
+const viteConfig = await readFile("vite.config.js", "utf8");
 
-if (!html.includes("GitHub Actions")) {
-  throw new Error("src/index.html should mention GitHub Actions");
+if (!app.includes("费典") || !app.includes("Feidian")) {
+  throw new Error("App should include bilingual identity content");
 }
 
-if (!html.includes("styles.css")) {
-  throw new Error("src/index.html should load styles.css");
+if (!app.includes("setLanguage") || !app.includes("setActiveKey")) {
+  throw new Error("App should include language and interaction state");
+}
+
+if (!viteConfig.includes('base: "/demo/"')) {
+  throw new Error("Vite should be configured for the GitHub Pages /demo/ base path");
+}
+
+for (const forbidden of ["purple", "violet", "magenta"]) {
+  if (styles.toLowerCase().includes(forbidden)) {
+    throw new Error(`Styles should avoid ${forbidden}`);
+  }
 }
 
 console.log("Smoke test passed");
